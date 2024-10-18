@@ -1,4 +1,4 @@
-CREATE TABLE
+CREATE TABLE 
     IF NOT EXISTS users (
         id serial PRIMARY KEY NOT NULL,
         nome varchar(255) NOT NULL,
@@ -7,7 +7,7 @@ CREATE TABLE
         senha varchar(150) NOT null
     );
 
-CREATE TABLE
+CREATE TABLE 
     IF NOT EXISTS tweets (
         id serial PRIMARY KEY NOT NULL,
         CONTENT varchar(255) NOT NULL,
@@ -15,14 +15,14 @@ CREATE TABLE
         user_id int NOT NULL REFERENCES users (id)
     );
 
-CREATE TABLE
+CREATE TABLE 
     IF NOT EXISTS likes (
         id serial PRIMARY KEY NOT NULL,
         user_id int NOT NULL REFERENCES users (id),
         tweet_id int NOT NULL REFERENCES tweets (id)
     );
 
-CREATE TABLE
+CREATE TABLE 
     IF NOT EXISTS re_tweets (
         id serial PRIMARY KEY NOT NULL,
         tweet_id int NOT NULL REFERENCES tweets (id),
